@@ -1,0 +1,54 @@
+//create func with para and return type to reverse a number\
+
+double rev(double num)
+{
+  double sum=0;
+  while(num>0){
+    double rem=num%10;
+    sum=sum*10+rem;
+    num=(num/10).floorToDouble();
+  }
+  return sum;
+}
+void main() {
+  print(rev(123));
+}
+
+//create a class bankcust with instance variable cust name , acc no, bal. 
+//create 2 func withrawl and deposite to accept amount for transactions 
+//also create a funct to display acc bal of the cust
+class cust
+{
+  String cname="";
+  int bal=0;
+  int accno=0;
+  
+  void withdraw(int amt)
+  {
+    //int wdbal=bal-5000;
+    if(amt>bal-5000) print("Withdraw Not Successful but to insufficient language");
+    else { print("Withdraw Successful");
+          bal=bal-amt;
+  }
+  }
+   void deposit(int amt)
+   {
+     bal=bal+amt;
+     print("Deposite Successful");
+   }
+  void disp(){
+    print(cname);
+    print(bal);
+    print(accno);
+  }
+} 
+void main() {
+  cust obj=cust();
+  obj.cname="Jack";
+  obj.bal=10001;
+  obj.accno=1011;
+  obj.disp();
+  obj.withdraw(2000);
+  obj.deposit(12000);
+  obj.disp();
+}
