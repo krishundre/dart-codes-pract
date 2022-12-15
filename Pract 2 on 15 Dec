@@ -1,0 +1,35 @@
+//create a map containing product category & its price. Display details of list of products of this catelog
+//Also  display most expensive prod. & average price available in this catelog
+
+void main(){
+  List tempMax=["Navi Mumbai",25,"Pune",29,"Nagpur",30,"Nashik",33,"Kalyan",33,"Vasai",35,"Aurangabad",32,"Solapur",33,"Jalgaon",35,"Amarvati",32,"Solapur",34];
+  List tempMin=["Navi Mumbai",-5,"Pune",10,"Nagpur",11,"Nashik",20,"Kalyan",12,"Vasai",10,"Aurangabad",31,"Solapur",11,"Jalgaon",15,"Amarvati",20,"Solapur",10];
+  print("List of cities with their max temperature ");
+  for(int i=0;i<19;i+=2){
+    print("City name is "+ tempMax[i].toString()+" temperature is "+tempMax[i+1].toString());
+  }
+  print("\n List of cities with their min temperature ");
+  for(int i=0;i<19;i+=2){
+    print("City name is "+ tempMin[i].toString()+" temperature is "+tempMin[i+1].toString());
+  }
+  int max=tempMax[1];
+  int min=tempMin[1];
+  int tempindex=1;
+  int cityindex=0;
+  int tempindexMin=1;
+  int cityindexMin=0;
+  for(int i=1;i<20;i+=2){
+    if(max<tempMax[i]){
+      max=tempMax[i];
+      tempindex=i;
+      cityindex=i-1;
+    }
+    if(min>tempMin[i]){
+      min=tempMin[i];
+      tempindexMin=i;
+      cityindexMin=i-1;
+    }
+  }
+   print(" \n City with max temperature is: "+ tempMax[cityindex].toString()+":"+ tempMax[tempindex].toString());
+  print(" \n City with min temperature is: "+ tempMin[cityindexMin].toString()+":"+ tempMin[tempindexMin].toString());
+}
